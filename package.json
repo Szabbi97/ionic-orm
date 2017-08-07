@@ -1,52 +1,52 @@
 {
-  "name": "ionic-orm",
-  "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
-  "private": false,
-  "version": "0.0.5",
-  "license": "MIT",
-  "author": "Brady Liles <bradyliles@outlook.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BradyLiles/ionic-orm.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BradyLiles/ionic-orm/issues"
-  },
-  "tags": [
-    "orm",
-    "ionic",
-    "cordova",
-    "ionic-orm",
-    "websql",
-    "websql-orm",
-    "sqlite-orm"
-  ],
-  "devDependencies": {
-    "@ionic-native/core": "^3.10.3",
-    "@ionic-native/sqlite": "^3.10.3",
-    "grunt-contrib-jshint": "^1.0.0",
-    "rxjs": "^5.4.0",
-    "typescript": "^2.0.3"
-  },
-  "dependencies": {
-    "@types/lodash": "^4.14.37",
-    "grunt": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "lodash": "^4.16.4",
-    "moment": "2.15.2"
-  },
-  "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "orm",
-    "ionic",
-    "cordova",
-    "ionic-orm",
-    "websql",
-    "websql-orm",
-    "sqlite-orm"
-  ]
+    "name": "ionic-orm-3",
+    "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
+    "private": false,
+    "version": "0.0.7",
+    "license": "MIT",
+    "author": "Brady Liles <bradyliles@outlook.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/raniel90/ionic-orm.git"
+    },
+    "bugs": {
+        "url": "https://github.com/BradyLiles/ionic-orm/issues"
+    },
+    "tags": [
+        "orm",
+        "ionic",
+        "cordova",
+        "ionic-orm",
+        "websql",
+        "websql-orm",
+        "sqlite-orm"
+    ],
+    "devDependencies": {
+        "@ionic-native/core": "^3.10.3",
+        "@ionic-native/sqlite": "^3.10.3",
+        "grunt-contrib-jshint": "^1.0.0",
+        "rxjs": "^5.4.0",
+        "typescript": "^2.0.3"
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.37",
+        "grunt": "^1.0.1",
+        "grunt-contrib-watch": "^1.0.0",
+        "lodash": "^4.16.4",
+        "moment": "2.15.2"
+    },
+    "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "orm",
+        "ionic",
+        "cordova",
+        "ionic-orm",
+        "websql",
+        "websql-orm",
+        "sqlite-orm"
+    ]
 }

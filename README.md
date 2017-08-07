@@ -39,17 +39,9 @@ the business logic and worry about persistence only as a secondary problem.
 
 1. Install module:
 
-    `npm install ionic-orm --save`
+    `npm install ionic-orm-3 --save`
 
-2. You need to install `reflect-metadata` shim:
-
-    `npm install reflect-metadata --save`
-
-    and use it somewhere in the global place of your app:
-
-    * `require("reflect-metadata")` in your app's entry point (for example `app.ts`)
-
-3. Install database driver:
+2. Install database driver:
 
     * for **Cordova SQLite Plugin
 
@@ -78,7 +70,7 @@ export class Photo {
 Now lets make it entity:
 
 ```typescript
-import {Table} from "ionic-orm";
+import {Table} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -98,7 +90,7 @@ Let's add some columns.
 You can make any property of your model a column by using a `@Column` decorator:
 
 ```typescript
-import {Table, Column} from "ionic-orm";
+import {Table, Column} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -133,7 +125,7 @@ This is requirement and you can't avoid it.
 To make a column a primary you need to use `@PrimaryColumn` decorator.
 
 ```typescript
-import {Table, Column, PrimaryColumn} from "ionic-orm";
+import {Table, Column, PrimaryColumn} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -164,7 +156,7 @@ Now, lets say you want to make your id column to be auto-generated (this is know
 To do that you need to change your column's type to integer and set a `{ generated: true }` in your primary column's options:
 
 ```typescript
-import {Table, Column, PrimaryColumn} from "ionic-orm";
+import {Table, Column, PrimaryColumn} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -197,7 +189,7 @@ there is a special decorator called `@PrimaryGeneratedColumn` to do the same.
 Let's use it instead:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -230,7 +222,7 @@ We don't want all our columns to be limited varchars or excessive floats.
 Lets setup correct data types:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm-3";
 
 @Table()
 export class Photo {
@@ -263,7 +255,7 @@ Now, when our entity is created, lets create `app.ts` file and setup our connect
 
 ```typescript
 import "reflect-metadata";
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection({
@@ -301,7 +293,7 @@ But this is not very convenient, and instead we can setup the whole directory,
 where from all entities will be connected and used in our connection:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 
 createConnection({
     driver: {
@@ -346,7 +338,7 @@ Now you can run your `app.ts`, connection with database will be initialized, and
 Now lets create a new photo to save it in the database:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 
 createConnection(/*...*/).then(connection => {
 
@@ -371,7 +363,7 @@ createConnection(/*...*/).then(connection => {
 Lets use latest TypeScript advantages and use async/await syntax instead:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -397,7 +389,7 @@ Using entity managers you can manipulate any entity in your app.
 Now lets load our saved entity:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -419,7 +411,7 @@ When you deal with entities a lot, Repositories are more convenient to use then 
 
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -447,7 +439,7 @@ createConnection(/*...*/).then(async connection => {
 Lets try more load operations using Repository:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -480,7 +472,7 @@ createConnection(/*...*/).then(async connection => {
 Now lets load a single photo from the database, update it and save it:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -501,7 +493,7 @@ Now let's remove our photo from the database:
 
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -521,7 +513,7 @@ Lets create a one-to-one relation with another class.
 Lets create a new class called PhotoMetadata.ts which will contain a PhotoMetadata class which supposed to contain our photo's additional meta-information:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm-3";
 import {Photo} from "./Photo";
 
 @Table()
@@ -583,7 +575,7 @@ If you run the app you'll see a new generated table, and it will contain a colum
 Now lets save a photo, its metadata and attach them to each other.
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -630,7 +622,7 @@ To fix it we should add inverse relation and make relations between PhotoMetadat
 Let's modify our entities:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm-3";
 import {Photo} from "./Photo";
 
 @Table()
@@ -645,7 +637,7 @@ export class PhotoMetadata {
 ```
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne} from "ionic-orm-3";
 import {PhotoMetadata} from "./PhotoMetadata";
 
 @Table()
@@ -676,7 +668,7 @@ Lets use FindOptions first.
 Using this you can customize your query to perform more complex queries.
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -706,7 +698,7 @@ In `"photo.metadata"` "photo" is an alias you used, and "metadata" is a property
 Lets use `QueryBuilder` for the same purpose. QueryBuilder allows to use more complex queries in an elegant way:
 
 ```typescript
-import {createConnection} from "ionic-orm";
+import {createConnection} from "ionic-orm-3";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -783,7 +775,7 @@ Lets say a photo has one author, and each author can have many photos.
 First, lets create Author class:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from "ionic-orm-3";
 import {Photo} from "./Photo";
 
 @Table()
@@ -806,7 +798,7 @@ OneToMany is always an inverse side of relation, and it can't exist without Many
 Now lets add owner side of relationship into the Photo entity:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, ManyToOne} from "ionic-orm";
+import {Table, Column, PrimaryGeneratedColumn, ManyToOne} from "ionic-orm-3";
 import {PhotoMetadata} from "./PhotoMetadata";
 import {Author} from "./Author";
 
@@ -857,7 +849,7 @@ Lets say a photo can be in many albums, and multiple can have many photos.
 Lets create an `Album` class:
 
 ```typescript
-import {Table, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "ionic-orm";
+import {Table, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "ionic-orm-3";
 
 @Table()
 export class Album {
