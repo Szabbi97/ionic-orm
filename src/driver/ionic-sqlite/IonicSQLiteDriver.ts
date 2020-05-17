@@ -13,7 +13,7 @@ import { IonicSQLiteQueryRunner } from "./IonicSQLiteQueryRunner";
 import {QueryRunner} from "../../query-runner/QueryRunner";
 import {DriverOptionNotSetError} from "../error/DriverOptionNotSetError";
 
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { SQLite, SQLiteObject, SQLiteOriginal } from '@ionic-native/sqlite';
 
 /**
  * Organizes communication with ionic-sqlite DBMS.
@@ -76,7 +76,7 @@ export class IonicSQLiteDriver implements Driver {
      */
     connect(): Promise<void> {
         return new Promise<void>((ok, fail) => {
-            let sqlite = new SQLite();
+            let sqlite = new SQLiteOriginal();
             const connection: Promise<SQLiteObject> = sqlite.create({name: String(this.options.database),location: 'default'});
 
             if(!connection)
