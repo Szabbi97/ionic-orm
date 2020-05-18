@@ -2,7 +2,7 @@
     "name": "ionic-orm-3",
     "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
     "private": false,
-    "version": "0.0.12",
+    "version": "0.0.13",
     "license": "MIT",
     "author": "Brady Liles <bradyliles@outlook.com>",
     "repository": {
@@ -22,18 +22,18 @@
         "sqlite-orm"
     ],
     "devDependencies": {
-        "@ionic-native/core": "^3.10.3",
-        "@ionic-native/sqlite": "^3.10.3",
-        "grunt-contrib-jshint": "^1.0.0",
-        "rxjs": "^5.4.0",
-        "typescript": "^2.0.3"
+        "@ionic-native/core": "^5.26.0",
+        "@ionic-native/sqlite": "^5.26.0",
+        "grunt-contrib-jshint": "^2.1.0",
+        "rxjs": "^6.5.5",
+        "typescript": "^3.9.2"
     },
     "dependencies": {
-        "@types/lodash": "^4.14.37",
-        "grunt": "^1.0.1",
-        "grunt-contrib-watch": "^1.0.0",
-        "lodash": "^4.16.4",
-        "moment": "2.15.2"
+        "@types/lodash": "^4.14.151",
+        "grunt": "^1.1.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "lodash": "^4.17.15",
+        "moment": "^2.25.3"
     },
     "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
     "main": "dist/index.js",
